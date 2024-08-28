@@ -6,7 +6,7 @@ body {
   height: 100vh;
   width: 100%;
   /* overflow: scroll; */
-  background-color: #F5F5F5;
+  background-color: #2e476f;
 }
 .header {
   text-align: center;
@@ -23,6 +23,14 @@ body {
   max-height: 400px;
   object-fit: contain;
 }
+/*.login-form-button {
+  width: 100%;
+}*/
 .login-form-button {
   width: 100%;
+  background-color: #294984; /* สีพื้นหลังของปุ่ม (เปลี่ยนตามที่ต้องการ) */
+  
 }
+
+
+

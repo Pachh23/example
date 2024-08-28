@@ -1,11 +1,11 @@
 import { lazy } from "react";
 import { RouteObject } from "react-router-dom";
-import Loadable from "../components/third-patry/ Loadable.tsx";
+import Loadable from "../components/third-patry/Loadable";
 import FullLayout from "../layout/FullLayout";
 const MainPages = Loadable(lazy(() => import("../pages/authentication/Login")));
 const Dashboard = Loadable(lazy(() => import("../pages/dashboard")));
 const Customer = Loadable(lazy(() => import("../pages/customer")));
-const CreateCustomer = Loadable(lazy(() => import("../pages/customer/create")));
+const CreateCustomer = Loadable(lazy(() => import("../pages/customer/create/ index")));
 const EditCustomer = Loadable(lazy(() => import("../pages/customer/edit")));
 const AdminRoutes = (isLoggedIn : boolean): RouteObject => {
   return {
@@ -36,5 +36,4 @@ const AdminRoutes = (isLoggedIn : boolean): RouteObject => {
     ],
   };
 };
-
 export default AdminRoutes;

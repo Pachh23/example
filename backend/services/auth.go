@@ -29,9 +29,7 @@ func (j *JwtWrapper) GenerateToken(email string) (signedToken string, err error)
 			Issuer:    j.Issuer,
 		},
 	}
-
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-
 	signedToken, err = token.SignedString([]byte(j.SecretKey))
 	if err != nil {
 		return
@@ -48,21 +46,17 @@ func (j *JwtWrapper) ValidateToken(signedToken string) (claims *JwtClaim, err er
 			return []byte(j.SecretKey), nil
 		},
 	)
-
 	if err != nil {
 		return
 	}
-
 	claims, ok := token.Claims.(*JwtClaim)
 	if !ok {
 		err = errors.New("couldn't parse claims")
 		return
 	}
-
 	if claims.ExpiresAt < time.Now().Local().Unix() {
 		err = errors.New("JWT is expired")
 		return
 	}
-
 	return
 }

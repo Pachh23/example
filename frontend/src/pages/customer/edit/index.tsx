@@ -15,7 +15,7 @@ import {
 } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import { UsersInterface } from "../../../interfaces/IUser";
-import { GetUsersById, UpdateUsersById } from "../../../services/ https";
+import { GetUsersById, UpdateUsersById } from "../../../services/ https/index";
 import { useNavigate, Link, useParams } from "react-router-dom";
 import dayjs from "dayjs";
 function CustomerEdit() {
